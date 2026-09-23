@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Curriculum Vitae - Lina Fatima Azzahra Badr</title>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<style>
+		@charset "utf-8";
+		@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700");
+		@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+		/* ===== BASE CSS ===== */
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		html {
+			height: 100%;
+		}
+
+		body {
+			min-height: 100%;
+			font-family: "Quicksand", sans-serif;
+			color: rgba(0, 0, 0, 0.6);
+			font-size: 14px;
+			background: #fafafa;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			color: #000;
+			font-family: "Quicksand", Arial, sans-serif;
+			font-weight: 400;
+			margin: 0 0 30px 0;
+		}
+
+		ul, li, ol {
+			padding: 0;
+			margin: 0;
+		}
+
+		li {
+			list-style: none;
+		}
+
+		a {
+			color: inherit;
+			text-decoration: none;
+			transition: 0.3s;
+		}
+
+		a:hover {
+			color: #000;
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+			vertical-align: bottom;
+		}
+
+		/* ===== LAYOUT ===== */
+		.wrapper {
+			width: 100%;
+			min-height: 100vh;
+		}
+
+		.container {
+			display: flex;
+			flex-direction: row;
+			min-height: 100vh;
+		}
+
+		.left-content {
+			width: 300px;
+			background: #fff;
+			border-right: 1px solid rgba(221, 221, 221, 0.38);
+			padding: 30px;
+			display: flex;
+			flex-direction: column;
+			overflow-y: auto;
+		}
+
+		.main-content {
+			flex: 1;
+			background: #fff;
+			overflow-y: auto;
+			padding: 30px;
+		}
+
+		/* ===== LOGO ===== */
+		.logo {
+			margin-bottom: 30px;
+		}
+
+		.logo a {
+			color: #fff;
+			text-align: right;
+			background: #000;
+			display: flex;
+			flex-direction: column;
+			padding: 10px 15px;
+			font-size: 16px;
+			text-transform: uppercase;
+			letter-spacing: 5px;
+			line-height: 30px;
+			font-weight: 500;
+		}
+
+		.logo span {
+			display: block;
+		}
+
+		/* ===== NAVIGATION ===== */
+		.nav {
+			margin: 50px 0;
+		}
+
+		.nav ul li {
+			display: flex;
+			justify-content: flex-end;
+			margin-bottom: 15px;
+		}
+
+		.nav ul li a {
+			padding: 8px 0;
+			text-transform: uppercase;
+			color: rgba(0, 0, 0, 0.4);
+			letter-spacing: 1px;
+			font-weight: 500;
+			position: relative;
+		}
+
+		.nav ul li a::after {
+			content: "";
+			width: 0;
+			height: 1px;
+			background: #000;
+			position: absolute;
+			bottom: 5px;
+			left: 0;
+			right: 0;
+			transform: scaleX(0);
+			transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		}
+
+		.nav ul li a:hover {
+			color: #000;
+		}
+
+		.nav ul li a:hover::after {
+			width: 100%;
+			transform: scaleX(1);
+		}
+
+		/* ===== PROFILE SECTION ===== */
+		.profile-container {
+			display: flex;
+			align-items: center;
+			gap: 40px;
+			margin-bottom: 60px;
+		}
+
+		.user-img {
+			flex: 1;
+		}
+
+		.user-img img {
+			width: 100%;
+			border-radius: 8px;
+		}
+
+		.user-profile {
+			flex: 1;
+		}
+
+		.sm-text {
+			letter-spacing: 2.1px;
+			font-weight: normal;
+			color: #222;
+			font-size: 12px;
+			font-family: "Roboto", sans-serif;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+		}
+
+		.name {
+			font-size: 40px;
+			text-transform: uppercase;
+			margin: 15px 0;
+			color: #222;
+			font-family: "Roboto", sans-serif;
+			font-weight: 600;
+			line-height: 1.2;
+		}
+
+		.role {
+			font-size: 16px;
+			font-weight: 500;
+			font-family: "Roboto", sans-serif;
+			text-transform: uppercase;
+			margin-bottom: 20px;
+			color: #222;
+		}
+
+		.profile-text {
+			font-size: 14px;
+			line-height: 1.6;
+			margin-bottom: 20px;
+		}
+
+		.pr-list ul {
+			margin: 20px 0;
+		}
+
+		.pr-list ul li {
+			margin-bottom: 8px;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+		}
+
+		.pr-list ul li i {
+			width: 18px;
+			color: #666;
+		}
+
+		.social-icons-head {
+			margin-top: 20px;
+		}
+
+		.social-icons-head ul {
+			display: flex;
+			gap: 10px;
+		}
+
+		.social-icons-head ul li a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 22px;
+			transition: all 0.3s;
+		}
+
+		.social-icons-head ul li a:hover {
+			color: #000;
+			transform: scale(1.2) translateY(-5px);
+		}
+
+		/* ===== SECTIONS ===== */
+		.section-title {
+			margin-bottom: 50px;
+		}
+
+		.pg-sub-title {
+			font-size: 10px;
+			text-transform: uppercase;
+			color: #999;
+			font-weight: 500;
+			letter-spacing: 5px;
+			margin-bottom: 10px;
+		}
+
+		.pg-title {
+			font-size: 28px;
+			font-weight: 500;
+			text-transform: uppercase;
+			letter-spacing: 5px;
+			color: #000;
+		}
+
+		.cv-section {
+			margin-bottom: 50px;
+		}
+
+		.cv-section h2 {
+			font-size: 18px;
+			font-weight: 600;
+			text-transform: uppercase;
+			margin-bottom: 30px;
+			color: #000;
+			letter-spacing: 2px;
+		}
+
+		/* ===== EXPERIENCE ITEMS ===== */
+		.experience-item {
+			margin-bottom: 40px;
+			border-left: 3px solid #000;
+			padding-left: 20px;
+		}
+
+		.experience-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			margin-bottom: 10px;
+		}
+
+		.experience-header h3 {
+			font-size: 16px;
+			font-weight: 600;
+			text-transform: uppercase;
+			color: #000;
+			margin: 0;
+			letter-spacing: 1px;
+		}
+
+		.experience-header span {
+			font-size: 13px;
+			color: #666;
+			font-style: italic;
+			display: block;
+			margin-top: 5px;
+		}
+
+		.experience-date {
+			font-size: 13px;
+			color: #999;
+			text-align: right;
+			font-weight: 500;
+		}
+
+		.experience-location {
+			font-size: 12px;
+			color: #999;
+			margin-bottom: 15px;
+			text-transform: uppercase;
+		}
+
+		.experience-item ul li {
+			margin-bottom: 12px;
+			line-height: 1.6;
+		}
+
+		/* ===== SKILLS ===== */
+		.simple-list {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.simple-list li {
+			margin-bottom: 20px;
+			line-height: 1.6;
+		}
+
+		.simple-list strong {
+			display: block;
+			margin-bottom: 8px;
+			color: #000;
+			font-weight: 600;
+		}
+
+		/* ===== RESPONSIVE ===== */
+		@media (max-width: 768px) {
+			.container {
+				flex-direction: column;
+			}
+
+			.left-content {
+				width: 100%;
+				border-right: none;
+				border-bottom: 1px solid rgba(221, 221, 221, 0.38);
+			}
+
+			.profile-container {
+				flex-direction: column;
+				gap: 30px;
+			}
+
+			.user-img {
+				max-width: 300px;
+			}
+
+			.name {
+				font-size: 32px;
+			}
+
+			.experience-header {
+				flex-direction: column;
+				gap: 10px;
+			}
+
+			.experience-date {
+				text-align: left;
+			}
+
+			.nav ul li {
+				justify-content: flex-start;
+			}
+
+			.logo a {
+				text-align: left;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="container">
+			<!-- LEFT SIDEBAR -->
+			<div class="left-content">
+				<div class="logo">
+					<a href="#home">
+						<span>My</span>
+						<span>Curriculum Vitae</span>
+					</a>
+				</div>
+
+				<nav class="nav">
+					<ul>
+						<li><a href="#home">Home</a></li>
+						<li><a href="#experience">Experiences</a></li>
+					</ul>
+				</nav>
+			</div>
+
+			<!-- MAIN CONTENT -->
+			<div class="main-content">
+				<!-- HOME SECTION -->
+				<div id="home" class="section-title">
+					<div class="pg-sub-title">Home</div>
+					<div class="pg-title">My Profile</div>
+				</div>
+
+				<div class="profile-container">
+					<div class="user-img">
+						<img src="photo.jpeg" alt="Lina Fatima Azzahra Badr">
+					</div>
+					<div class="user-profile">
+						<div class="sm-text">Hello Everybody, I am</div>
+						<div class="name">Lina Fatima<br>Azzahra Badr</div>
+						<div class="role">Mahasiswa Institut Teknologi Sepuluh Nopember</div>
+						
+						<p class="profile-text">
+							Saya Lina Fatima Azzahra Badr, mahasiswa Informatika Institut Teknologi Sepuluh Nopember (ITS) yang memiliki passion di bidang teknologi, seni digital, dan inovasi kreatif. Saya adalah pribadi yang teliti, bersemangat belajar, serta mampu berpikir logis dan kreatif dalam memecahkan masalah. Ketertarikan saya pada pengembangan web dan desain digital mencerminkan keinginan untuk menggabungkan aspek teknologi dan estetika guna menciptakan solusi yang fungsional sekaligus menarik.
+						</p>
+
+						<div class="pr-list">
+							<ul>
+								<li>
+									<i class="fa fa-phone" aria-hidden="true"></i>
+									<span>+62 815 991 1113</span>
+								</li>
+								<li>
+									<i class="fa fa-envelope" aria-hidden="true"></i>
+									<span>5025251168@student.its.ac.id</span>
+								</li>
+								<li>
+									<i class="fa fa-map-marker" aria-hidden="true"></i>
+									<span>Surabaya, Indonesia</span>
+								</li>
+							</ul>
+						</div>
+
+						<div class="social-icons-head">
+							<ul>
+								<li>
+									<a href="https://www.linkedin.com/in/lina-fatima-azzahra-badr-44b95b378/" title="LinkedIn">
+										<i class="fa fa-linkedin-square"></i>
+									</a>
+								</li>
+								<li>
+									<a href="https://instagram.com" title="Instagram">
+										<i class="fa fa-instagram"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- EXPERIENCE SECTION -->
+				<div id="experience" class="cv-section">
+					<h2>Pengalaman Bekerja</h2>
+
+					<div class="experience-item">
+						<div class="experience-header">
+							<div>
+								<h3>Seniman Digital Lepas</h3>
+								<span>Pekerja Mandiri</span>
+							</div>
+							<div class="experience-date">Maret 2020 - September 2022</div>
+						</div>
+						<div class="experience-location">Remote</div>
+						<ul>
+							<li>Bekerja sama dengan lebih dari 20 klien dari berbagai latar belakang untuk merancang dan menghasilkan ilustrasi digital, desain karakter, serta branding berkualitas tinggi sesuai kebutuhan mereka.</li>
+						</ul>
+					</div>
+
+					<div class="experience-item">
+						<div class="experience-header">
+							<div>
+								<h3>Eksperimen Pengembangan Web Level Dasar</h3>
+								<span>Pekerja Mandiri</span>
+							</div>
+							<div class="experience-date">Juni 2023</div>
+						</div>
+						<div class="experience-location">Remote</div>
+						<ul>
+							<li>Merancang dan mengembangkan situs web konseptual dengan gaya estetika web tahun 1990-an, menggunakan teknik autentik seperti tata letak berbasis tabel (table-based layout).</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- SKILLS SECTION -->
+				<div class="cv-section">
+					<h2>Minat / Ketertarikan / Kemampuan</h2>
+
+					<ul class="simple-list">
+						<li>
+							<strong>Kemampuan dalam bidang teknologi:</strong>
+							C/C++, C#, HTML, CSS, Lua, RPGMaker 2003, Clip Studio Paint
+						</li>
+						<li>
+							<strong>Kemampuan Bahasa:</strong>
+							Bahasa Inggris (Skor DET 160), Bahasa Jepang (N5)
+						</li>
+						<li>
+							<strong>Keterampilan:</strong>
+							Melukis, Membuat musik, Pengembangan gim
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
